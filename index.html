@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oumaima Attafi - Business Analyst Portfolio</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      background: rgba(12, 44, 87, 0.6); /* Transparent blue */
+      backdrop-filter: blur(10px); /* Apply blur effect */
+      padding: 20px;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    #nav ul {
+      display: flex;
+      list-style-type: none;
+    }
+
+    #nav ul li {
+      margin-left: 30px;
+    }
+
+    #nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    #nav ul li a:hover {
+      color: #ff5a5f;
+    }
+
+    /* Page Layout */
+    section {
+      padding: 100px 20px;
+      width: 100%;
+      max-width: 1200px; /* Ensures content doesn't get too stretched on very large screens */
+      margin: auto;
+    }
+
+    #about, #skills, #projects, #contact {
+      background-color: #ffffff;
+      margin-top: 80px;
+      border-radius: 8px;
+      padding: 60px 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .content h2 {
+      color: #0c2c57;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    button {
+      background-color: #ff5a5f;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      font-size: 18px;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #0c2c57;
+      color: white;
+    }
+
+    .project-list {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .project-card {
+      background-color: #f7f7f7;
+      padding: 30px;
+      width: 45%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    #about, #skills, #projects, #contact {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div class="logo">
+      <h1>Oumaima Attafi</h1>
+      <p>Business Analyst Portfolio</p>
+    </div>
+    <nav id="nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <div class="content">
+      <h2>About Me</h2>
+      <p>I'm a business analyst passionate about using data to solve complex problems and optimize business performance. With strong skills in data analysis, financial modeling, and strategic business decision-making, I work to deliver insights that drive business growth.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="content">
+      <h2>My Skills</h2>
+      <ul>
+        <li>Data Analysis</li>
+        <li>Financial Modeling</li>
+        <li>Business Strategy</li>
+        <li>Excel & Power BI</li>
+        <li>Python & SQL</li>
+        <li>Project Management</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="content">
+      <h2>My Projects</h2>
+      <div class="project-list">
+        <div class="project-card">
+          <h3>Financial Modeling using Excel</h3>
+          <p>Created a comprehensive financial model to assess the profitability of a potential investment.</p>
+          <button onclick="viewProject(1)">View Project</button>
+        </div>
+        <div class="project-card">
+          <h3>Data Analysis with Python</h3>
+          <p>Analyzed large datasets using Python, providing insights for business decision-making.</p>
+          <button onclick="viewProject(2)">View Project</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="content">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Oumaima Attafi</p>
+  </footer>
+
+  <script>
+    // Project View Button
+    function viewProject(projectNumber) {
+      alert(`You clicked to view Project ${projectNumber}`);
+    }
+
+    // Contact Form Submission
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Message Sent!');
+    });
+
+    // Add smooth scroll to navigation links
+    document.querySelectorAll('#nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
